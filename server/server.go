@@ -95,7 +95,7 @@ func (s *Server) Start() {
 	go func() {
 		s.syncServices()
 		for {
-			err := s.cache.Subscribe("inress-router", s.syncServices)
+			err := s.cache.Subscribe("ingress-router", s.syncServices)
 			log.Printf("Subscription to updates lost, retrying in 10 seconds: %v", err)
 			time.Sleep(10 * time.Second)
 		}
